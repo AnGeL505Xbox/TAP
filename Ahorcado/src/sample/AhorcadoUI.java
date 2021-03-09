@@ -2,6 +2,9 @@ package sample;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -10,9 +13,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
+import java.io.IOException;
 import java.util.Random;
 
-public class Controller {
+public class AhorcadoUI {
     @FXML HBox boxHijo;
     @FXML AnchorPane anchorPadre;
 
@@ -88,7 +92,11 @@ public class Controller {
         alert.setTitle(title);
         alert.setContentText(text);
         alert.showAndWait();
-        System.exit(0);
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("MainUI.fxml"));
+            Scene scene = new Scene(root);
+            Main.stage.setScene(scene);
+        } catch (IOException e) { e.printStackTrace(); }
     }
 
 }
