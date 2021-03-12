@@ -1,0 +1,30 @@
+.buttonApp{
+    -fx-background-image: url(SVG/app.png);
+    -fx-background-size: 30px;
+    -fx-background-color: rgba( 0,0,0,0)
+}
+.buttonBrush{
+    -fx-background-image: url(SVG/brush.png);
+    -fx-background-size: 30px;
+    -fx-background-color: rgba( 0,0,0,0)
+}
+.buttonCircle{
+    -fx-background-image: url(SVG/circle.png);
+    -fx-background-size: 28px;
+    -fx-background-color: rgba( 0,0,0,0)
+}
+.buttonDash{
+    -fx-background-image: url(SVG/dash.png);
+    -fx-background-size: 30px;
+    -fx-background-color: rgba( 0,0,0,0)
+}
+.buttonEraser{
+    -fx-background-image: url(SVG/eraser-fill.png);
+    -fx-background-size: 30px;
+    -fx-background-color: rgba( 0,0,0,0)
+}
+.buttonSave{
+    -fx-background-image: url(SVG/save2.png);
+    -fx-background-size: 30px;
+    -fx-background-color: rgba( 0,0,0,0)
+}
