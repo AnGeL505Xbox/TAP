@@ -27,7 +27,7 @@ public class Controller {
         //#region Default
         colorPicker.setValue(Color.BLACK);
         brushColor = colorPicker.getValue();
-        cbType.getItems().addAll("Brocha", "Casillas", "Ajedrez", "Estrella","Curva");
+        cbType.getItems().addAll("Brocha", "Casillas", "Ajedrez", "Estrella","Curva", "Circulo");
         sliderSize.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
@@ -43,7 +43,7 @@ public class Controller {
             btCircle.setDisable(false);
             btSquare.setDisable(false);
             btLine.setDisable(false);
-        }else if (cbType.getSelectionModel().getSelectedIndex() == 1 || cbType.getSelectionModel().getSelectedIndex() == 2 || cbType.getSelectionModel().getSelectedIndex() == 3 || cbType.getSelectionModel().getSelectedIndex() == 4) {
+        }else if (cbType.getSelectionModel().getSelectedIndex() == 1 || cbType.getSelectionModel().getSelectedIndex() == 2 || cbType.getSelectionModel().getSelectedIndex() == 3 || cbType.getSelectionModel().getSelectedIndex() == 4 || cbType.getSelectionModel().getSelectedIndex() == 5 ) {
             btBrush.setDisable(true);
             btCircle.setDisable(true);
             btSquare.setDisable(true);
@@ -122,6 +122,18 @@ public class Controller {
                 }
             }
             //#endregion
+            else if(cbType.getSelectionModel().getSelectedIndex() == 5){
+                context.setFill(Color.WHITESMOKE);
+                context.fillRect(0, 0, lienzo.getWidth(), lienzo.getHeight());
+                brushColor = colorPicker.getValue();
+                context.setFill(brushColor);
+                //650x650
+                context.strokeOval(0,0,lienzo.getWidth(),lienzo.getHeight());
+                context.strokeOval(162.5,0,325,lienzo.getHeight()/2);
+                /*for (int x = 0; x<value;x++){
+
+                }*/
+            }
         }
     }
 
