@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="477.0" maxWidth="910.0" minHeight="300.0" minWidth="500.0" prefHeight="477.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Login">
+<AnchorPane maxHeight="477.0" maxWidth="910.0" minHeight="300.0" minWidth="500.0" prefHeight="477.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ORION.LoginScreen.Login">
    <children>
-      <AnchorPane layoutX="514.0" layoutY="42.0" prefHeight="396.0" prefWidth="364.0">
+      <AnchorPane fx:id="paneLogin" layoutX="514.0" layoutY="42.0" prefHeight="396.0" prefWidth="364.0">
          <children>
             <TextField fx:id="txtNumberControl" layoutX="33.0" layoutY="136.0" prefHeight="25.0" prefWidth="299.0" promptText="Nombre de Usuario" />
             <Button layoutX="33.0" layoutY="249.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="299.0" style="-fx-background-color: #2EFEF7;" text="Entrar" />
@@ -29,10 +29,22 @@
             <Font name="System Italic" size="28.0" />
          </font>
       </Label>
-      <ImageView fitHeight="323.0" fitWidth="388.0" layoutX="92.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgLogo" fitHeight="323.0" fitWidth="388.0" layoutX="92.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/logo.png" />
+            <Image url="@../img/logo.png" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="paneRegister" layoutX="23.0" layoutY="82.0" prefHeight="396.0" prefWidth="364.0" visible="false">
+         <children>
+            <TextField fx:id="txUserName" layoutX="34.0" layoutY="96.0" prefHeight="25.0" prefWidth="299.0" promptText="Nombre de Usuario" />
+            <PasswordField fx:id="txPassWord" layoutX="33.0" layoutY="131.0" prefHeight="25.0" prefWidth="299.0" promptText="Contraseña" />
+            <Label layoutX="149.0" layoutY="51.0" text="Registrarse" textFill="#d0cccc">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Button layoutX="96.0" layoutY="173.0" mnemonicParsing="false" onAction="#btRegistrar" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #58FAD0;" text="Registrarse" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

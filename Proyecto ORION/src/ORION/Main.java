@@ -1,4 +1,4 @@
-package sample;
+package ORION;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage=primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LoginScreen/login.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 910, 477));
         primaryStage.show();

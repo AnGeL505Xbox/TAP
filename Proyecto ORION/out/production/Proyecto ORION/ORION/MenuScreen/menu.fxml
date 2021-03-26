@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.menu.Menu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ORION.MenuScreen.Menu">
    <children>
       <Label layoutX="168.0" layoutY="22.0" prefHeight="40.0" prefWidth="251.0" text="Diagnostico Medico">
          <font>
             <Font name="System Italic" size="28.0" />
          </font>
       </Label>
-      <Button layoutX="34.0" layoutY="127.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="221.0" text="IMC">
+      <Button layoutX="34.0" layoutY="127.0" mnemonicParsing="false" onAction="#btTools" prefHeight="39.0" prefWidth="221.0" text="IMC">
          <font>
             <Font size="18.0" />
          </font>
@@ -24,7 +24,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="34.0" layoutY="235.0" mnemonicParsing="false" onAction="#bntDiag" prefHeight="39.0" prefWidth="221.0" text="Diagnostico Medico">
+      <Button layoutX="34.0" layoutY="235.0" mnemonicParsing="false" onAction="#btDiagnostic" prefHeight="39.0" prefWidth="221.0" text="Diagnostico Medico">
          <font>
             <Font size="18.0" />
          </font>
