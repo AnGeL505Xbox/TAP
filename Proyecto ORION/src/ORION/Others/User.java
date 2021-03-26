@@ -3,15 +3,16 @@ package ORION.Others;
 import java.util.List;
 
 public class User {
-    private String name, CURP, password;
+    private String name, CURP, password, username;
     private int age;
     private double height, weigth, imc;
     private List<Sick> sicks;
 
-    public User(String name, String CURP, String password, int age, double height, double weigth, List<Sick> sicks) {
+    public User(String name, String CURP, String password, String username, int age, double height, double weigth, List<Sick> sicks) {
         this.name = name;
         this.CURP = CURP;
         this.password = password;
+        this.username = username;
         this.age = age;
         this.height = height;
         this.weigth = weigth;
@@ -63,9 +64,15 @@ public class User {
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void imcCalculate(){

@@ -1,6 +1,7 @@
 package ORION.LoginScreen;
 
 import ORION.Main;
+import ORION.Others.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,8 @@ public class Login{
     @FXML TextField txtNumberControl ,txtPassword, txUserName, txPassWord;
     @FXML ImageView imgLogo;
     @FXML AnchorPane paneLogin, paneRegister;
+    String userName, passWord;
+    User user;
 
     public void ingresar(){
         String usuario=txtNumberControl.getText();
@@ -28,9 +31,7 @@ public class Login{
                 Scene scene=new Scene(root);
                 Main.stage.setScene(scene);
                 Main.stage.setMaximized(false);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            } catch (IOException e) { e.printStackTrace(); }
         }else{
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Inicio de Sesion Fallido");
@@ -51,6 +52,16 @@ public class Login{
         paneRegister.setVisible(true);
     }
     public void btRegistrar(ActionEvent event){
-
+        this.userName = txUserName.getText();
+        this.passWord = txPassWord.getText();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../LoginScreen/register.fxml"));
+            Scene scene=new Scene(root);
+            Main.stage.setScene(scene);
+            Main.stage.setMaximized(false);
+        } catch (IOException e) { e.printStackTrace(); }
     }
-}//controller
+
+    public String getUserName() { return userName; }
+    public String getPassWord() { return passWord; }
+}

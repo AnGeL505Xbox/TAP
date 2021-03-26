@@ -24,8 +24,8 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextField fx:id="txPeso" layoutX="39.0" layoutY="18.0" promptText="Peso" />
-                        <TextField fx:id="txAltura" layoutX="730.0" layoutY="17.0" promptText="Altura" />
+                        <TextField fx:id="txPeso" layoutX="39.0" layoutY="18.0" promptText="Peso (KG)" />
+                        <TextField fx:id="txAltura" layoutX="730.0" layoutY="17.0" promptText="Altura (Mts)" />
                         <ListView fx:id="listIMC" layoutX="297.0" layoutY="125.0" prefHeight="200.0" prefWidth="300.0" />
                         <Button layoutX="424.0" layoutY="330.0" mnemonicParsing="false" onAction="#btCalculate" text="Calcular" />
                      </children>
