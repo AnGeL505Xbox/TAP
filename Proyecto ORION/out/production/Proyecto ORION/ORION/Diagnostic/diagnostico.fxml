@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ORION.Diagnostic.Diagnostico">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(derive(#58D3F7,100%), #58D3F7);" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ORION.Diagnostic.Diagnostico">
    <children>
       <Button layoutX="461.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnTest" text="Iniciar Test">
          <font>
@@ -22,11 +22,7 @@
             <Font name="System Italic" size="18.0" />
          </font>
       </Button>
-      <TableView fx:id="listEnferm" layoutX="28.0" layoutY="31.0" prefHeight="258.0" prefWidth="547.0">
-        <columns>
-          <TableColumn fx:id="clmEnfe" prefWidth="172.0" text="Enfermedad" />
-          <TableColumn fx:id="clmTrat" prefWidth="374.0" text="Tratamiento" />
-        </columns>
-      </TableView>
+      <ListView fx:id="clmEnfe" layoutX="32.0" layoutY="20.0" prefHeight="239.0" prefWidth="228.0" />
+      <Label fx:id="lblTra" layoutX="286.0" layoutY="34.0" text="Label" />
    </children>
 </AnchorPane>

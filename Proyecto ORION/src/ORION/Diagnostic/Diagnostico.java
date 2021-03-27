@@ -6,15 +6,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.io.IOException;
-
 public class  Diagnostico{
-    @FXML TableView<Test> listEnferm=new TableView();
-    @FXML TableColumn clmEnfe = new TableColumn<>("Enfermedad");
-    @FXML TableColumn clmTrat = new TableColumn<>("Enfermedad");
+
+
+    public void initialize(){
+
+    }
+    @FXML ListView clmEnfe=new ListView();
+    @FXML Label lblTra=new Label();
+
 
     Test test = new Test();
     String enfe=test.getEnfermedad();
@@ -34,7 +40,9 @@ public class  Diagnostico{
         } catch (IOException e) { e.printStackTrace(); }
     }
     public void mostrar(ActionEvent event){
-      // clmEnfe.getColumns().addAll(test.getEnfermedad());
+      clmEnfe.getItems().addAll(test.getEnfermedad());
+      lblTra.setText(test.getEnfermedad()+" se cura con el siguiente tratamiento");
+
     }
 
 }
