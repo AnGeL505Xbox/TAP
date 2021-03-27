@@ -19,41 +19,46 @@ public class Login{
     @FXML TextField txtNumberControl ,txtPassword, txUserName, txPassWord;
     @FXML ImageView imgLogo;
     @FXML AnchorPane paneLogin, paneRegister;
-    String userName, passWord;
-    User user;
 
-    public void ingresar(){
-        String usuario=txtNumberControl.getText();
-        String password=txtPassword.getText();
-        if(usuario.equals("si")  && password.equals("si")){
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("../MenuScreen/menu.fxml"));
-                Scene scene=new Scene(root);
-                Main.stage.setScene(scene);
-                Main.stage.setMaximized(false);
-            } catch (IOException e) { e.printStackTrace(); }
-        }else{
-            Alert alert=new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Inicio de Sesion Fallido");
-            alert.setContentText("Datos invalidos, intenta nuevamente en Sing Up");
-            alert.show();
+    static String userReg, passReg, userLog, passLog;
+
+    @FXML public void initialize() {
+        //#region Llave maestra
+        Register.listUser.addFirst(new User("","","admin","admin",0,2,100,null));
+        //#endregion
+    }
+
+    public void login(ActionEvent event){
+        userLog =txtNumberControl.getText();
+        passLog =txtPassword.getText();
+
+        for (int x = 0; x<Register.getListUser().size(); x++) {
+            if ((userLog.equals(Register.getListUser().get(x).getUsername()) && passLog.equals(Register.getListUser().get(x).getPassword())) || (userLog.equals("admin") && passLog.equals("admin"))) {
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("../MenuScreen/menu.fxml"));
+                    Scene scene = new Scene(root);
+                    Main.stage.setScene(scene);
+                    Main.stage.setMaximized(false);
+                } catch (IOException e) { e.printStackTrace(); }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Inicio de Sesion Fallido");
+                alert.setContentText("Datos invalidos, intenta nuevamente en Sing Up");
+                alert.show();
+                break;
+            }
         }
     }
-    public void login(ActionEvent event){
-        txtNumberControl.setEditable(false);
-        txtPassword.setEditable(false);
-        txtPassword.setVisible(false);
-        txtNumberControl.setVisible(false);
-        ingresar();
-    }
+
     public void registro(ActionEvent event){
         paneLogin.setVisible(false);
         imgLogo.setVisible(false);
         paneRegister.setVisible(true);
     }
+
     public void btRegistrar(ActionEvent event){
-        this.userName = txUserName.getText();
-        this.passWord = txPassWord.getText();
+        this.userReg = txUserName.getText();
+        this.passReg = txPassWord.getText();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../LoginScreen/register.fxml"));
             Scene scene=new Scene(root);
@@ -62,6 +67,10 @@ public class Login{
         } catch (IOException e) { e.printStackTrace(); }
     }
 
-    public String getUserName() { return userName; }
-    public String getPassWord() { return passWord; }
+    //#region Getters & Setters
+    public String getUserName() { return userReg; }
+    public String getPassWord() { return passReg; }
+    public static String getUsuario() { return userLog; }
+    public static String getPassword() { return passLog; }
+    //#endregion
 }

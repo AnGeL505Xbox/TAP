@@ -2,23 +2,41 @@ package ORION.tools;
 
 import ORION.LoginScreen.Login;
 import ORION.LoginScreen.Register;
-import ORION.Others.User;
+import ORION.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+
+import java.io.IOException;
 
 public class Tools {
-    @FXML TextField txAltura, txPeso;
-    @FXML ListView<String> listIMC;
-    User user;
-    @FXML public void initialize(){
+    @FXML Label txAltura, txPeso, txIMC;
 
+    int us = 0;
+
+    @FXML public void initialize(){
+        for(int x = 0;x<Register.getListUser().size();x++){
+            if(Register.getListUser().get(x).getUsername().equals(Login.getUsuario())){
+                this.us = x;
+            }
+        }
     }
 
     public void btCalculate(ActionEvent event){
-        user.imcCalculate();
-        listIMC.getItems().clear();
-        listIMC.getItems().add("Indice de Masa Corporal: "+user.getImc());
+        txAltura.setText(Register.getListUser().get(us).getHeight()+" Mts");
+
+        txPeso.setText(Register.getListUser().get(us).getWeigth()+" Kgs");
+        txIMC.setText(""+Register.getListUser().get(us).getImc());
+    }
+
+    public void btReturn(ActionEvent event){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("../MenuScreen/menu.fxml"));
+            Scene scene = new Scene(root);
+            Main.stage.setScene(scene);
+        } catch (IOException e) { e.printStackTrace(); }
     }
 }

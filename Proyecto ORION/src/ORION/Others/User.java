@@ -5,7 +5,7 @@ import java.util.List;
 public class User {
     private String name, CURP, password, username;
     private int age;
-    private double height, weigth, imc;
+    private double height, weigth;
     private List<Sick> sicks;
 
     public User(String name, String CURP, String password, String username, int age, double height, double weigth, List<Sick> sicks) {
@@ -75,10 +75,7 @@ public class User {
         this.username = username;
     }
 
-    public void imcCalculate(){
-        this.imc = getWeigth()/(Math.pow(getHeight(),2));
-    }
     public double getImc(){
-        return imc;
+        return (getWeigth()/(Math.pow(getHeight(),2)));
     }
 }

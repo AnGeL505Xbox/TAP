@@ -8,24 +8,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
-import java.util.Collection;
 
-public class Diagnostico{
-    Test test = new Test();
-
-    String enfe=test.getEnfermedad();
-
+public class  Diagnostico{
     @FXML TableView<Test> listEnferm=new TableView();
     @FXML TableColumn clmEnfe = new TableColumn<>("Enfermedad");
     @FXML TableColumn clmTrat = new TableColumn<>("Enfermedad");
-    public void initialize(){
 
-    }
+    Test test = new Test();
+    String enfe=test.getEnfermedad();
+
     public void btnTest(ActionEvent event){
-
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/ORION/Diagnostic/test.fxml"));
             Scene scene = new Scene(root);
