@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(derive(#58D3F7,100%), #58D3F7);" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ORION.MenuScreen.Menu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(derive(#58D3F7,100%), #58D3F7);" stylesheets="@../Others/main.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ORION.MenuScreen.Menu">
    <children>
       <Label layoutX="168.0" layoutY="22.0" prefHeight="40.0" prefWidth="251.0" text="Diagnostico Medico">
          <font>

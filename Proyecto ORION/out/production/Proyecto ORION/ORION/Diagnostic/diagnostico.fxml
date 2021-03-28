@@ -23,6 +23,6 @@
          </font>
       </Button>
       <ListView fx:id="clmEnfe" layoutX="32.0" layoutY="20.0" prefHeight="239.0" prefWidth="228.0" />
-      <Label fx:id="lblTra" layoutX="286.0" layoutY="34.0" text="Label" />
+      <Label fx:id="lblTra" layoutX="286.0" layoutY="34.0" prefHeight="251.0" prefWidth="289.0" />
    </children>
 </AnchorPane>

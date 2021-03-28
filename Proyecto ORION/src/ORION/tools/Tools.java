@@ -9,25 +9,34 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
 public class Tools {
     @FXML Label txAltura, txPeso, txIMC;
+    @FXML VBox vbCartilla;
 
     int us = 0;
-
+    ListView<String> listView = new ListView<>();
     @FXML public void initialize(){
         for(int x = 0;x<Register.getListUser().size();x++){
             if(Register.getListUser().get(x).getUsername().equals(Login.getUsuario())){
                 this.us = x;
             }
         }
+        vbCartilla.getChildren().add(listView);
+        listView.getItems().add("Usuario: "+Register.getListUser().get(us).getUsername());
+        listView.getItems().add("Nombre: "+Register.getListUser().get(us).getName());
+        listView.getItems().add("Edad: "+Register.getListUser().get(us).getAge());
+        listView.getItems().add("CURP: "+Register.getListUser().get(us).getCURP());
+        listView.getItems().add("Peso: "+Register.getListUser().get(us).getWeigth());
+        listView.getItems().add("Altura: "+Register.getListUser().get(us).getHeight());
     }
 
     public void btCalculate(ActionEvent event){
         txAltura.setText(Register.getListUser().get(us).getHeight()+" Mts");
-
         txPeso.setText(Register.getListUser().get(us).getWeigth()+" Kgs");
         txIMC.setText(""+Register.getListUser().get(us).getImc());
     }

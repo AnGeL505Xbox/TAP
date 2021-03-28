@@ -56,6 +56,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS" />
       </list>
     </option>
   </component>
@@ -139,7 +140,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ahorcado" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">

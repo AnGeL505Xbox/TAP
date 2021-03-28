@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="910.0" style="-fx-background-color: linear-gradient(derive(#58D3F7,100%), #58D3F7);" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ORION.LoginScreen.Register">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="910.0" style="-fx-background-color: linear-gradient(derive(#58D3F7,100%), #58D3F7);" stylesheets="@../Others/main.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ORION.LoginScreen.Register">
    <children>
       <Label text="Datos personales">
          <font>
@@ -54,7 +54,7 @@
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
             <CheckBox fx:id="checkPrivacy" mnemonicParsing="false" text="He leído y acepto los Terminos de Privacidad" />
-            <Button mnemonicParsing="false" onAction="#btFinish" style="-fx-background-color: #81F781;" text="Terminar">
+            <Button mnemonicParsing="false" onAction="#btFinish" text="Terminar">
                <HBox.margin>
                   <Insets left="40.0" />
                </HBox.margin>

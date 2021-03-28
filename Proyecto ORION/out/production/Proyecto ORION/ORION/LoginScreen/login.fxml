@@ -9,19 +9,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="477.0" maxWidth="910.0" minHeight="300.0" minWidth="500.0" prefHeight="477.0" prefWidth="910.0" style="-fx-background-color: linear-gradient(derive(#58D3F7,100%), #58D3F7);" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ORION.LoginScreen.Login">
+<AnchorPane maxHeight="477.0" maxWidth="910.0" minHeight="300.0" minWidth="500.0" prefHeight="477.0" prefWidth="910.0" style="-fx-background-color: linear-gradient(derive(#58D3F7,100%), #58D3F7);" stylesheets="@../Others/main.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ORION.LoginScreen.Login">
    <children>
       <AnchorPane fx:id="paneLogin" layoutX="273.0" layoutY="55.0" prefHeight="396.0" prefWidth="364.0">
          <children>
             <TextField fx:id="txtNumberControl" layoutX="33.0" layoutY="136.0" prefHeight="25.0" prefWidth="299.0" promptText="Nombre de Usuario" />
-            <Button layoutX="33.0" layoutY="249.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="299.0" style="-fx-background-color: #81F781;" text="Entrar" />
+            <Button layoutX="33.0" layoutY="249.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="299.0" text="Entrar" />
             <PasswordField fx:id="txtPassword" layoutX="33.0" layoutY="186.0" prefHeight="25.0" prefWidth="299.0" promptText="Contraseña" />
             <Label layoutX="149.0" layoutY="51.0" text="Entrar">
                <font>
                   <Font name="System Italic" size="22.0" />
                </font>
             </Label>
-            <Button layoutX="97.0" layoutY="331.0" mnemonicParsing="false" onAction="#registro" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #F7FE2E;" text="Registrarse" />
+            <Button layoutX="97.0" layoutY="331.0" mnemonicParsing="false" onAction="#registro" prefHeight="25.0" prefWidth="172.0" text="Registrarse" />
             <Label layoutX="96.0" layoutY="312.0" text="¿No tienes cuenta?" />
          </children>
       </AnchorPane>
@@ -35,16 +35,17 @@
             <Image url="@../img/logo.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="paneRegister" layoutX="23.0" layoutY="82.0" prefHeight="396.0" prefWidth="364.0" visible="false">
+      <AnchorPane fx:id="paneRegister" layoutX="273.0" layoutY="55.0" prefHeight="396.0" prefWidth="364.0" visible="false">
          <children>
-            <TextField fx:id="txUserName" layoutX="34.0" layoutY="96.0" prefHeight="25.0" prefWidth="299.0" promptText="Nombre de Usuario" />
-            <PasswordField fx:id="txPassWord" layoutX="33.0" layoutY="131.0" prefHeight="25.0" prefWidth="299.0" promptText="Contraseña" />
-            <Label layoutX="149.0" layoutY="51.0" text="Registrarse" textFill="#d0cccc">
+            <TextField fx:id="txUserName" layoutX="33.0" layoutY="111.0" prefHeight="25.0" prefWidth="299.0" promptText="Nombre de Usuario" />
+            <PasswordField fx:id="txPassWord" layoutX="32.0" layoutY="163.0" prefHeight="25.0" prefWidth="299.0" promptText="Contraseña" />
+            <Label layoutX="129.0" layoutY="50.0" text="Registrarse">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Button layoutX="96.0" layoutY="173.0" mnemonicParsing="false" onAction="#btRegistrar" prefHeight="25.0" prefWidth="172.0" style="-fx-background-color: #58FAD0;" text="Registrarse" />
+            <Button layoutX="142.0" layoutY="211.0" mnemonicParsing="false" onAction="#btRegistrar" prefHeight="25.0" prefWidth="80.0" text="Registrarse" />
+            <Button layoutX="149.0" layoutY="260.0" mnemonicParsing="false" onAction="#btCancel" prefHeight="25.0" prefWidth="66.0" text="Cancelar" />
          </children>
       </AnchorPane>
    </children>
