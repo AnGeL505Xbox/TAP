@@ -2,6 +2,7 @@ package ORION.LoginScreen;
 
 import ORION.Main;
 import ORION.Others.User;
+import ORION.models.Conections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -18,28 +19,43 @@ import javafx.scene.layout.AnchorPane;
 
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class Login{
     static String userReg, passReg, userLog, passLog;
+    static int idPacient=0;
+    private Conections conection;
 
     @FXML TextField txtNumberControl ,txtPassword, txUserName, txPassWord;
     @FXML ImageView imgLogo;
     @FXML AnchorPane paneLogin, paneRegister;
     @FXML public void initialize() {
-        Register.listUser.addFirst(new User("","","admin","admin",0,2,100,null)); //Master key
-
+        conection = new Conections();
         //#region Login events
         txtNumberControl.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-                if(keyEvent.getCode() == KeyCode.ENTER) log();
+                if(keyEvent.getCode() == KeyCode.ENTER) {
+                    try {
+                        log();
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    }
+                }
             }
         });
         txtPassword.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-                if(keyEvent.getCode() == KeyCode.ENTER) log();
+                if(keyEvent.getCode() == KeyCode.ENTER) {
+                    try {
+                        log();
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    }
+                }
             }
         });
         txUserName.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -58,26 +74,35 @@ public class Login{
     }
 
     //#region Eventos del boton de Acceder
-    public void login(ActionEvent event){ log(); }
+    public void login(ActionEvent event) throws SQLException { log(); }
 
-    public void log(){
+    public void log() throws SQLException {
         userLog =txtNumberControl.getText();
         passLog =txtPassword.getText();
 
-        for (int x = 0; x<Register.getListUser().size(); x++) {
-            if ((userLog.equals(Register.getListUser().get(x).getUsername()) && passLog.equals(Register.getListUser().get(x).getPassword())) || (userLog.equals("admin") && passLog.equals("admin"))) {
+        ResultSet resultSet = conection.consultar("select * from users where username = '"+userLog+"' and password = '"+passLog+"'");
+        System.out.println("select * from users where username = '"+userLog+"' and password = '"+passLog+"'");
+        if (resultSet!=null){
+            int timer=0;
+            while (resultSet.next()){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("Bienvenido "+userLog);
+                alert.showAndWait();
+                timer++;
+            }
+            if (timer==0){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Credenciales no validas");
+                alert.showAndWait();
+            } else {
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("../MenuScreen/menu.fxml"));
                     Scene scene = new Scene(root);
                     Main.stage.setScene(scene);
                     Main.stage.setMaximized(false);
-                } catch (IOException e) { e.printStackTrace(); }
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Inicio de Sesion Fallido");
-                alert.setContentText("Datos invalidos, intenta nuevamente en Sing Up");
-                alert.show();
-                break;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

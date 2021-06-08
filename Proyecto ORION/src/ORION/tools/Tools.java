@@ -18,15 +18,11 @@ public class Tools {
     @FXML Label txAltura, txPeso, txIMC;
     @FXML VBox vbCartilla;
 
-    int us = 0;
+    int us = 0, id = 0;
     ListView<String> listView = new ListView<>();
     @FXML public void initialize(){
-        for(int x = 0;x<Register.getListUser().size();x++){
-            if(Register.getListUser().get(x).getUsername().equals(Login.getUsuario())){
-                this.us = x;
-            }
-        }
         vbCartilla.getChildren().add(listView);
+
         listView.getItems().add("Usuario: "+Register.getListUser().get(us).getUsername());
         listView.getItems().add("Nombre: "+Register.getListUser().get(us).getName());
         listView.getItems().add("Edad: "+Register.getListUser().get(us).getAge());

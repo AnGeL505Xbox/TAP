@@ -55,8 +55,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="CSS" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -140,7 +140,10 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ahorcado" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/libraries/mysql-connector-java-5.1.15-bin.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
